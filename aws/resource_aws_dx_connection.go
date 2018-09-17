@@ -13,6 +13,7 @@ import (
 )
 
 func resourceAwsDxConnection() *schema.Resource {
+	// I have changed this file
 	return &schema.Resource{
 		Create: resourceAwsDxConnectionCreate,
 		Read:   resourceAwsDxConnectionRead,
