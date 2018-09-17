@@ -14,6 +14,7 @@ import (
 )
 
 func resourceAwsCodeDeployApp() *schema.Resource {
+	// change will actually be ignored
 	return &schema.Resource{
 		Create: resourceAwsCodeDeployAppCreate,
 		Read:   resourceAwsCodeDeployAppRead,
