@@ -12,6 +12,7 @@ import (
 )
 
 func resourceAwsWafByteMatchSet() *schema.Resource {
+	// change that will be ignored
 	return &schema.Resource{
 		Create: resourceAwsWafByteMatchSetCreate,
 		Read:   resourceAwsWafByteMatchSetRead,
