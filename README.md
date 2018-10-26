@@ -1,17 +1,18 @@
-Terraform Provider
+AWS Terraform Provider
 ==================
 
 - Website: https://www.terraform.io
+- Documentation: https://www.terraform.io/docs/providers/aws/
 - [![Gitter chat](https://badges.gitter.im/hashicorp-terraform/Lobby.png)](https://gitter.im/hashicorp-terraform/Lobby)
 - Mailing list: [Google Groups](http://groups.google.com/group/terraform-tool)
-
 <img src="https://cdn.rawgit.com/hashicorp/terraform-website/master/content/source/assets/images/logo-hashicorp.svg" width="600px">
+
 
 Requirements
 ------------
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.10+
-- [Go](https://golang.org/doc/install) 1.11 (to build the provider plugin)
+- [Go](https://golang.org/doc/install) 1.11+ (to build the provider plugin)
 
 Building The Provider
 ---------------------
@@ -34,6 +35,13 @@ Using the provider
 ----------------------
 If you're building the provider, follow the instructions to [install it as a plugin.](https://www.terraform.io/docs/plugins/basics.html#installing-a-plugin) After placing it into your plugins directory,  run `terraform init` to initialize it.
 
+See the [AWS provider documentation](https://www.terraform.io/docs/providers/aws/) to get started using AWS provider.
+
+Upgrading the provider
+----------------------
+
+To upgrade to the latest stable version of the Google provider run `terraform init -upgrade`. See the [Terraform website](https://www.terraform.io/docs/configuration/providers.html#provider-versions) for more information.
+
 Developing the Provider
 ---------------------------
 
@@ -48,9 +56,10 @@ $ $GOPATH/bin/terraform-provider-aws
 ...
 ```
 
+For guidance on common development practices such as testing changes or vendoring libraries, see the [contribution guidelines](https://github.com/terraform-providers/terraform-provider-google/blob/master/.github/CONTRIBUTING.md). If you have other development questions we don't cover, please file an issue!
+
 In order to test the provider, you can simply run `make test`.
 
-*Note:* Make sure no `AWS_ACCESS_KEY_ID` or `AWS_SECRET_ACCESS_KEY` variables are set, and there's no `[default]` section in the AWS credentials file `~/.aws/credentials`.
 
 ```sh
 $ make test
@@ -63,5 +72,3 @@ In order to run the full suite of Acceptance tests, run `make testacc`.
 ```sh
 $ make testacc
 ```
-
-If you need to add a new package in the vendor directory under `github.com/aws/aws-sdk-go`, create a separate PR handling _only_ the update of the vendor for your new requirement. Make sure to pin your dependency to a specific version, and that all versions of `github.com/aws/aws-sdk-go/*` are pinned to the same version.
