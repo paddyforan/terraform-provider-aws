@@ -6,6 +6,8 @@ description: |-
   Provides a Redshift event subscription resource.
 ---
 
+# This is a change
+
 # aws_redshift_event_subscription
 
 Provides a Redshift event subscription resource.
