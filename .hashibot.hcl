@@ -417,3 +417,8 @@ behavior "regexp_issue_labeler_v2" "service_labels" {
     ],
   }
 }
+
+behavior "assign_random_reviewer" "paddy" {
+  reviewers            = ["paddycarver", "paddyforan", "ptyng"]
+  only_non_maintainers = true
+}
